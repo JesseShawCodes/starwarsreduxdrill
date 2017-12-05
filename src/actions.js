@@ -1,3 +1,6 @@
+// This function will make an AJAX request to the Star Wars API
+// It will randomly fail for 25% of requests, and has a 0.5s delay artifically
+// inserted so you can check your loading state
 import {search} from './star-wars';
 
 export const SEARCH_CHARACTERS_REQUEST = 'SEARCH_CHARACTERS_REQUEST';
@@ -18,9 +21,7 @@ export const searchCharactersError = error => ({
 });
 
 export const searchCharacters = name => dispatch => {
-    dispatch(searchCharactersRequest());
-    search(name)
-        .then(characters => dispatch(searchCharactersSuccess(characters)))
-        .catch(error => dispatch(searchCharactersError(error)));
+    // Make this async action using the search function
+    // It should dispatch the three sync actions above
 };
 
